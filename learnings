@@ -1,0 +1,18 @@
+VM through powershell
+ New-AzVm -ResourceGroupName 'myResourceGroup01' -Name 'myVM01' -Location 'East US' -VirtualNetworkName 'myVnet1' -SubnetName 'mySubnet' -SecurityGroupName 'myNetworkSecurityGroup' -Size "Standard_B1s"
+
+To create networks and subnets by using powershell
+ $vnetName = "MyVNet"
+>> $subnetName = "MySubnet"
+>>
+>> # Create the Virtual Network
+>> $vnet = New-AzVirtualNetwork -ResourceGroupName "Dev" -Name $vnetName -Location "EastUS" -AddressPrefix "10.0.0.0/16"
+>>
+>> # Create the Subnet configuration
+>> $subnetConfig = New-AzVirtualNetworkSubnetConfig -Name $subnetName -AddressPrefix "10.0.0.0/24"
+>>
+>> # Add the Subnet to the Virtual Network
+>> $vnet | Add-AzVirtualNetworkSubnetConfig -Name $subnetName -AddressPrefix "10.0.0.0/24"
+>>
+>> # Set the Subnet configuration on the Virtual Network
+>> $vnet | Set-AzVirtualNetwork
