@@ -16,3 +16,6 @@ To create networks and subnets by using powershell
 >>
 >> # Set the Subnet configuration on the Virtual Network
 >> $vnet | Set-AzVirtualNetwork
+
+
+Appservice https://www.youtube.com/watch?v=b7scdxbnn5U&ab_channel=ottit
